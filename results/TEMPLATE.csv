@@ -1,0 +1,14 @@
+# Defocus ladder. One file per machine/lens/source/material combination.
+# Mark width in micrometres. Copy this file, rename it, fill it in, open a PR.
+# See CONTRIBUTING.md for the procedure. Record the power setting -- without it
+# the result cannot be compared with anyone else's.
+contributor,machine,lens_focal_length_mm,source,material,power_pct,speed_mm_s,frequency_khz,pulse_width_ns,line_spacing_mm,z_offset_mm,mark_width_um,notes
+,,,,,,,,,,-2.00,,
+,,,,,,,,,,-1.50,,
+,,,,,,,,,,-1.00,,
+,,,,,,,,,,-0.50,,
+,,,,,,,,,,0.00,,
+,,,,,,,,,,0.50,,
+,,,,,,,,,,1.00,,
+,,,,,,,,,,1.50,,
+,,,,,,,,,,2.00,,

@@ -1,0 +1,116 @@
+name: Defocus ladder result
+description: Nine mark widths from your machine. The most useful thing you can contribute.
+title: "Ladder: <machine> / <lens> / <source> / <material>"
+labels: ["data", "defocus-ladder"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you — this is the contribution the protocol was written to collect.
+
+        You do not need to analyse anything. Fill in the nine widths and the settings, and that is a complete result. If you only got partway, file it anyway and say where you stopped.
+
+        The procedure is in CONTRIBUTING.md and takes about an hour.
+
+  - type: input
+    id: machine
+    attributes:
+      label: Machine
+      placeholder: "WeCreat Lumos Ultra"
+    validations:
+      required: true
+
+  - type: input
+    id: lens
+    attributes:
+      label: Lens focal length (mm)
+      placeholder: "160"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: source
+    attributes:
+      label: Source
+      options:
+        - MOPA fiber (1064 nm)
+        - Standard fiber (1064 nm)
+        - UV (355 nm)
+        - Green (532 nm)
+        - CO2
+        - Other (say so in the notes)
+    validations:
+      required: true
+
+  - type: input
+    id: material
+    attributes:
+      label: Material
+      placeholder: "Polished brass, 2 mm"
+    validations:
+      required: true
+
+  - type: textarea
+    id: settings
+    attributes:
+      label: Settings — all fixed, nothing but Z changed
+      description: Power matters most. Mark formation is a threshold process, so a ladder without its power setting cannot be compared with anyone else's.
+      value: |
+        Power (%):
+        Speed (mm/s):
+        Frequency (kHz):
+        Pulse width (ns):
+        Line spacing (mm):
+    validations:
+      required: true
+
+  - type: textarea
+    id: ladder
+    attributes:
+      label: Mark width at each Z offset (um)
+      description: Leave a row blank if you did not reach it. Add 0.25 mm steps across the centre if the minimum was ambiguous.
+      value: |
+        | Z offset (mm) | Mark width (um) |
+        | --- | --- |
+        | -2.00 |  |
+        | -1.50 |  |
+        | -1.00 |  |
+        | -0.50 |  |
+        |  0.00 |  |
+        | +0.50 |  |
+        | +1.00 |  |
+        | +1.50 |  |
+        | +2.00 |  |
+    validations:
+      required: true
+
+  - type: dropdown
+    id: method
+    attributes:
+      label: How did you measure the widths?
+      description: An honest rough method is worth more than a figure presented as more precise than it is.
+      options:
+        - Microscope with a calibrated reticle or scale
+        - Scanned the coupon and measured in software
+        - Loupe and judgement
+        - Other (say so in the notes)
+    validations:
+      required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything that went wrong, surprised you, or that you are unsure about
+      description: Especially welcome. A confound you noticed is as useful as the numbers.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Before you file
+      options:
+        - label: Only Z changed between marks — every other parameter was fixed.
+          required: true
+        - label: I am happy to be credited by this GitHub username (say otherwise in the notes).
+          required: false
